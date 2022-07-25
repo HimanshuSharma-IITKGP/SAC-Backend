@@ -3,10 +3,16 @@ const dotenv = require('dotenv')
 
 dotenv.config();
 
-mongoose.connect(
-  process.env.MONGODB_URI || 
-  "mongodb://127.0.0.1:27017/SAC-Applications"
-);
+console.log(process.env.MONGODB_URI);
+const username = encodeURIComponent(process.env.DB_USERNAME);
+const password = encodeURIComponent(process.env.DB_PASSWORD);
 
+mongoose.connect(
+  `mongodb+srv://${username}:${password}@joboffersapplication.jmaojni.mongodb.net/test`,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 
 //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/your-app-name');

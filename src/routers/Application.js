@@ -9,11 +9,9 @@ const router = new express.Router();
 
 router.post('/applicationForm', async(req, res)=>{
 
-  console.log(req.body);
   const application = new Application(req.body) ;
   
   try{
-  console.log(application);
   application.save()
   res.status(201).send(application) ;
   }catch(e){
