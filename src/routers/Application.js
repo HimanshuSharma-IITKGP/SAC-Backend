@@ -1,9 +1,5 @@
 const Application = require("../models/Application");
 const express = require("express");
-const sharp = require("sharp");
-const jwt = require("jsonwebtoken");
-// const auth = require("../middleware/auth.js");
-const multer = require("multer");
 const router = new express.Router();
 
 
